@@ -14,13 +14,13 @@ const Footer = () => {
           <img src={logo} alt='efood' />
         </Link>
         <ContainerRedesSociais>
-          <a href='www.instagram.com'>
+          <a href='#'>
             <img src={instragram} alt='intagram' />
           </a>
-          <a href='www.facebook.com'>
+          <a href='#'>
             <img src={facebook} alt='intagram' />
           </a>
-          <a href='www.twitter.com'>
+          <a href='#'>
             <img src={twitter} alt='intagram' />
           </a>
         </ContainerRedesSociais>
