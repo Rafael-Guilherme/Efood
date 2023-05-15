@@ -3,7 +3,7 @@ import Restaurant from '../Restaurant'
 
 import { Container, List } from './styles'
 
-export type Props = {
+type Props = {
   restaurants: Restaurante[]
 }
 

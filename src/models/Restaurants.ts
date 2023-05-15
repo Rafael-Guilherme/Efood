@@ -1,12 +1,12 @@
 class Restaurant {
   title: string
-  grade: number
+  grade?: number
   image: string
   description: string
-  star: string
-  type: string
+  star?: string
+  type?: string
   info: string
-  week: string
+  week?: string
   id: number
 
   constructor(

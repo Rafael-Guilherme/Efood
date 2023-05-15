@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { cores } from '../../styles'
 
@@ -8,44 +9,32 @@ export const Imagem = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   font-weight: bold;
-  color: ${cores.rosa};
 
-  .container {
-    width: 539px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    img {
-      width: 125px;
-      height: 56px;
-      margin-top: 40px;
-    }
-  }
 `
 export const ContainerHeader = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  /* justify-content: space-evenly; */
+  margin: 0 auto;
+  width: 1024px;
   height: 186px;
 
   img {
+    width: 125px;
+    height: 56px;
     margin-left: 341px;
     margin-right: 193px;
   }
 `
+
+export const LinkHeader = styled(Link)`
+  color: ${cores.rosa};
+`
+
 export const Banner = styled.div`
   position: relative;
   height: 280px;
-
-  img {
-    width: 100%;
-    height: 280px;
-    position: relative;
-    z-index: 1;
-  }
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &::before {
     content: "";
@@ -64,13 +53,18 @@ export const Titles = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 32px;
 
   top: 20px;
-  left: 210px;
+  left: 160px;
   color: ${cores.branca};
   z-index: 5;
 
   p {
     font-weight: 100;
+  }
+
+  h2 {
+    font-weight: 900;
   }
 `
