@@ -5,16 +5,16 @@ import { Card, Descricao, Titulo, Infos, InfoHeader, Grade, InfoCard } from './s
 
 type Props = {
   title: string
-  grade: number
+  grade: number | undefined
   image: string
   description: string
-  star: string
-  type: string
+  star: string | undefined
+  type: string | undefined
   info: string
   week: string | undefined
 }
 
-const Restaurant = ({ title, grade, description, star, image, info, type, week = ''}: Props) => {
+const Restaurant = ({ title, grade, description, star, image, info, type = '', week = ''}: Props) => {
   return (
     <Card>
       <img src={image} />
