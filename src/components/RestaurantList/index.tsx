@@ -1,4 +1,4 @@
-import Restaurante from '../../models/Restaurants'
+import { Restaurante } from '../../pages/Home'
 import Restaurant from '../Restaurant'
 
 import { Container, List } from './styles'
@@ -15,15 +15,15 @@ const RestaurantsList = ({ restaurants }: Props) => {
           {restaurants.map((restaurant, index) => (
             <Restaurant
               key={restaurant.id}
-              description={restaurant.description}
-              image={restaurant.image}
-              info={restaurant.info}
-              grade={restaurant.grade}
-              star={restaurant.star}
-              week={index === 0 ? restaurant.week : undefined}
-              type={restaurant.type}
-              title={restaurant.title}
-            />
+              description={restaurant.descricao}
+              image={restaurant.capa}
+              grade={restaurant.avaliacao}
+              type={restaurant.tipo}
+              title={restaurant.titulo}
+              destacado={index === 0}
+              index={index}
+              id={restaurant.id}
+              />
           ))}
         </List>
       </div>

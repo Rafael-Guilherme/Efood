@@ -1,26 +1,44 @@
-import Restaurante from '../../models/Restaurants'
+import { CardapioItem, Restaurante } from '../../pages/Home'
 import CardRestaurante from '../CardRestaurante'
+import DetalhesDoPrato from '../DetalhesDoPrato'
 import { RestauranteContainer, RestaurantList } from './styles'
+import { useState } from "react"
 
 type Props = {
-  restaurants: Restaurante[]
+  restaurante: Restaurante
 }
 
-const CardRestauranteList = ({ restaurants }: Props) => {
+const CardRestauranteList = ({ restaurante }: Props) => {
+  const [selectedItem, setSelectedItem] = useState<CardapioItem | null>(null);
+
+  const abrirModal = (item: CardapioItem) => {
+    setSelectedItem(item);
+  };
+
+  const fecharModal = () => {
+    setSelectedItem(null);
+  };
+
   return (
     <div className='container'>
       <RestauranteContainer>
         <RestaurantList>
-          {restaurants.map((restaurant) => (
+          {restaurante.cardapio.map((item) => (
             <CardRestaurante
-              key={restaurant.id}
-              image={restaurant.image}
-              title={restaurant.title}
-              description={restaurant.description}
-              adicionar={restaurant.info}
+              key={item.id}
+              image={item.foto}
+              title={item.nome}
+              description={item.descricao}
+              funcao={() => abrirModal(item)}
             />
           ))}
         </RestaurantList>
+      {selectedItem && (
+        <DetalhesDoPrato
+          item={selectedItem}
+          onCloseModal={fecharModal}
+        />
+      )}
       </RestauranteContainer>
     </div>
   )

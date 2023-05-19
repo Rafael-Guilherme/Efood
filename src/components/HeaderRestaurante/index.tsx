@@ -1,11 +1,15 @@
 import { Imagem, ContainerHeader, Banner, Titles, LinkHeader } from './styles'
+import { Restaurante } from '../../pages/Home'
 
 import headerImg from '../../assets/images/Banner_header.png'
 import logo from '../../assets/images/logo.png'
-import italiano from '../../assets/images/italiana.png'
 import { Link } from 'react-router-dom'
 
-const HeaderRestaurante = () => {
+type Props = {
+  restaurante: Restaurante
+}
+
+const HeaderRestaurante = ({ restaurante }: Props) => {
   return (
     <Imagem style={{ backgroundImage: `url(${headerImg})` }}>
         <ContainerHeader>
@@ -16,11 +20,10 @@ const HeaderRestaurante = () => {
           <p>0 produto(s) no carrinho</p>
         </ContainerHeader>
       <div>
-        <Banner style={{ backgroundImage: `url(${italiano})` }}>
-          {/* <img src={italiano} alt='prato restaurante italiano' /> */}
+        <Banner style={{ backgroundImage: `url(${restaurante.capa})` }}>
           <Titles>
-            <p>Italiana</p>
-            <h2>La Dolce Vita Trattoria</h2>
+            <p>{restaurante.tipo}</p>
+            <h2>{restaurante.titulo}</h2>
           </Titles>
         </Banner>
       </div>

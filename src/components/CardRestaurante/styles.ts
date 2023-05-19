@@ -11,6 +11,12 @@ export const CardRestaurant = styled.div`
   height: 330px;
   margin-bottom: 32px;
   padding: 8px;
+
+  img {
+    max-width: 304px;
+    width: 100%;
+    max-height: 167px;
+  }
 `
 export const Titulo = styled.h3`
   font-size: 16px;
