@@ -5,11 +5,23 @@ import headerImg from '../../assets/images/Banner_header.png'
 import logo from '../../assets/images/logo.png'
 import { Link } from 'react-router-dom'
 
+import { open } from '../../store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+
+
 type Props = {
   restaurante: Restaurante
 }
 
 const HeaderRestaurante = ({ restaurante }: Props) => {
+  const dispatch = useDispatch()
+  const { itens } = useSelector((state: RootReducer) => state.cart)
+
+  const openCart = () => {
+    dispatch(open())
+  }
+
   return (
     <Imagem style={{ backgroundImage: `url(${headerImg})` }}>
         <ContainerHeader>
@@ -17,7 +29,9 @@ const HeaderRestaurante = ({ restaurante }: Props) => {
           <Link to='/'>
             <img src={logo} alt='efood' />
           </Link>
-          <p>0 produto(s) no carrinho</p>
+          <div onClick={openCart}>
+            <p>{itens.length} produto(s) no carrinho</p>
+          </div>
         </ContainerHeader>
       <div>
         <Banner style={{ backgroundImage: `url(${restaurante.capa})` }}>

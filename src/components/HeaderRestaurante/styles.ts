@@ -24,6 +24,10 @@ export const ContainerHeader = styled.div`
     margin-left: 341px;
     margin-right: 193px;
   }
+
+  div {
+    cursor: pointer;
+  }
 `
 
 export const LinkHeader = styled(Link)`
@@ -44,7 +48,7 @@ export const Banner = styled.div`
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    z-index: 1;
   }
 `
 export const Titles = styled.div`
@@ -58,7 +62,7 @@ export const Titles = styled.div`
   top: 20px;
   left: 160px;
   color: ${cores.branca};
-  z-index: 5;
+  z-index: 1;
 
   p {
     font-weight: 100;
